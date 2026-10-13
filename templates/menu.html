@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>menu</title>
+</head>
+<body>
+    <div class="all">
+        <div class="start">
+            <h1>National Dishes</h1>
+            <div class="start2">
+                <a class="b1" href="{% url 'about' %}">About Us</a>
+                <button class="b1" >Orders</button>
+            </div>
+        </div>
+    </div>
+    
+
+
+    <div class="menu">
+        {% for dish in menu %}
+        <div class="item">
+            <a href="{% url 'dish_detail' dish.pk %}"> <img class="img1" src="{{ dish.image.url }}" alt="{{ dish.dish_name }}"> </a>
+            <h2 class="h1">Name: {{ dish.dish_name }}</h2>
+            <p class="h1">Caption: {{ dish.caption }}</p>
+            <h4 class="h1">Price: ${{ dish.price }}</h4>
+        
+        </div>
+        {% endfor %}
+    </div>
+
+    <br>
+    <br>
+    <br>
+</body>
+</html>

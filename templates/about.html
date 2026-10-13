@@ -1,0 +1,24 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>About Us</title>
+</head>
+<body>
+    <div class="all">
+        <div class="start">
+            <h1>National Dishes</h1>
+        </div>
+    </div>
+
+    <div class="start3">
+        <h1>About Us</h1>
+        <p class="p2">«Наш ресторан — это место, где современная кухня встречается с атмосферой уюта и комфорта. Мы создаём блюда из свежих локальных продуктов и заботимся о каждом госте.»</p>
+        <br>
+        <a class="a1" href="{% url 'menu' %}">← Назад к меню</a>
+    </div>
+</body>
+</html>

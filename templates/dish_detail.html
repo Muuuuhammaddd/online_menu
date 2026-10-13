@@ -1,0 +1,24 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>{{ dish.dish_name }}</title>
+</head>
+<body>
+    <div class="detail">
+        {% if dish.image %}
+            <img class="img2" src="{{ dish.image.url }}" alt="{{ dish.dish_name }}">
+        {% endif %}
+        <div class="start3">
+        <h1>Name: {{ dish.dish_name }}</h1>
+        <p>Caption: {{ dish.caption }}</p>
+        <h3>Price: ${{ dish.price }}</h3>
+        <p>ID: {{ dish.id }}</p>
+        </div>
+        <a class="a1" href="{% url 'menu' %}">Назад</a>
+    </div>
+</body>
+</html>
